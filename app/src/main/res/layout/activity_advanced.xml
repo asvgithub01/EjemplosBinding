@@ -1,0 +1,27 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.example.alberto.tallerbinding.avanzado.RecyclerView.BindRecyclerUtils" />
+        <!--Esta variable sólo determina el TIPO de class que vamos a bindear.
+         El set de la instancia ese TIPO se hace en el inflate de la view(setcontentView) -->
+        <variable
+            name="recyclerVM"
+            type="com.example.alberto.tallerbinding.avanzado.RecyclerView.VMRecycler" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--*************HARDCORE RECYCLER***************-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/BindRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            bind:setBindingAdapter="@{recyclerVM.getAdapter()}"
+
+
+            />
+
+    </RelativeLayout>
+</layout>

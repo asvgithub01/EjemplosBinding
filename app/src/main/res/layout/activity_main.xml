@@ -1,0 +1,261 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+    <data>
+        <!--Los import son el mismo concepto que de Java, x comodidad y limpieza
+        a la hora de llamar a static, pero necesarios para los @BindingAdapters!-->
+        <import type="com.example.alberto.tallerbinding.commands" />
+        <import type="com.example.alberto.tallerbinding.Utils" />
+        <import type="com.example.alberto.tallerbinding.BindingAdapters" />
+        <import type="android.view.View" />
+        <!--esto se utiliza al establecer el View.Gone y tal-->
+
+        <!--Advanced-->
+       <import type="com.example.alberto.tallerbinding.avanzado.RecyclerView"/>
+        <import type="com.example.alberto.tallerbinding.avanzado.BindingAdaptersAdvanced" /><!--Imagenircular-->
+        <import type="com.example.alberto.tallerbinding.avanzado.RecyclerView.BindRecyclerUtils" /><!--RecyclerAdapter-->
+        <!--Esta variable sólo determina el TIPO de class que vamos a bindear.
+         El set de la instancia ese TIPO se hace en el inflate de la view(setcontentView) -->
+        <variable
+            name="recyclerVM"
+            type="com.example.alberto.tallerbinding.avanzado.RecyclerView.VMRecycler" />
+        <!--Esta variable sólo determina el TIPO de class que vamos a bindear.
+      El set de la instancia ese TIPO se hace en el inflate de la view(setcontentView) -->
+        <variable
+            name="activity"
+            type="com.example.alberto.tallerbinding.MainActivity" />
+        <variable
+            name="oneway"
+            type="com.example.alberto.tallerbinding.OneWayBinding" />
+        <variable
+            name="func"
+            type="com.example.alberto.tallerbinding.TwoWayFunctions" />
+        <variable
+            name="twoway"
+            type="com.example.alberto.tallerbinding.TwoWayBinding" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#6677ff"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="OneWay Binding " />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Campo1"
+                android:text="@{oneway.field1}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Campo2"
+                android:text="@{oneway.field2}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#667799"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="TwoWays Binding " />
+            <!---->
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:addTextChangedListener="@{twoway.field1Changed}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nombre"
+                android:text="@{twoway.field1}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Uso de funciones static propias(toupper)" />
+            <!--uso de funciones propias, parecido a un converter-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nombre"
+                android:text="@{Utils.MayusQlizar(twoway.field1)}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#667777"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Eventos x Binding" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="CheckBoxCon2Ways"
+                android:text="@{func.checkLabel}"
+                app:onCheckedChangeListener="@{func.myCheckListener}" />
+
+
+            <!--Expression language , usando mvvm es mejor trasladar la logica al vm, x tema de probar,tentador cmo poco-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Visible cuando el check esta a true"
+                android:visibility="@{func.isVisible ? View.VISIBLE : View.GONE}" />
+
+            <!--  <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:onClick="@{func.btnLabel==&quot;Borrar&quot; ? func.BorrarClickListener : func.InsertarClickListener}"
+                  android:text="@{func.btnLabel}" />
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  app:onClick="@{func.onClickBorrarListener}"
+                  android:text="@{func.btnLabel}" />-->
+            <Button
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{activity.strTestContexto}"
+                bind:commandOnClick="@{Utils.getHelloWorldCommand()}" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saludador"
+                bind:commandOnClick="@{Utils.getHelloWorldCommand()}"
+                bind:commandOnClickWithParam="Paco" />
+            <!--android:onClick="@{func.btnLabel==func.litBorrar ? func.onClickBorrarListener : func.onClickBorrarListener}"-->
+            <Button
+                android:id="@+id/btnTipo3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="btn listener tipo3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#667777"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text=" Binding Adapters o como Usar Metodos de un control como si fuera propiedades" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    bind:onLoadImageUrlSimple="@{Utils.getRandomPicture()}" />
+
+                <!--bind:onLoadImageUrlSimple="@null" /> esto es el intento para llamar a un
+                bindingadapter con solo el aprametro de la view-->
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    bind:loadImageUrl="@{Utils.getRandomPicture()}" />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    bind:loadImageUrl="@{Utils.getRandomPicture()}"
+                    bind:placeholder="@drawable/magic" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ****************Advanced ****************************-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADVANCED"/>
+
+        <!--*************RECYCLER por binding sin findinView***************-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/BindRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="#668899"
+            />
+
+        <!--*************RECYCLER por bindingRecycler***************-->
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="#9966ff"
+            bind:setRecyclerBinding="@{recyclerVM.getAdapter()}"
+            />
+
+        <!--*************RECYCLER por binding adapter/linear***************-->
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="#226699"
+            bind:setBindingAdapter="@{recyclerVM.getAdapter()}"
+            bind:setBindingLayoutManager="@{recyclerVM.getLayoutManager()}"
+            />
+        <!--*************RECYCLER por binding adapter/linear/itemR.Layout, nombre de lo datos, siempre deberia ser unobjeto llamado itemData***************-->
+     <!--En un solo @BindingAdapter   RecyclerAdapter<T> extends-->
+        <!--*************RECYCLER por binding adapter/linear***************-->
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="#992266"
+            bind:setBindingAdapter="@{recyclerVM.getMyAdapter()}"
+            bind:setBindingLayoutManager="@{recyclerVM.getMyLayoutManager()}"
+            />
+
+
+    </LinearLayout>
+</ScrollView>
+
+</layout>

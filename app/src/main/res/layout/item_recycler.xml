@@ -1,0 +1,63 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.alberto.tallerbinding.Utils" />
+        <import type="com.example.alberto.tallerbinding.avanzado.BindingAdaptersAdvanced" />
+        <!--Esta variable sólo determina el TIPO de class que vamos a bindear.
+         El set de la instancia ese TIPO se hace en el inflate de la view(setcontentView) -->
+        <variable
+            name="name"
+            type="com.example.alberto.tallerbinding.avanzado.RecyclerView.Model.Name" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- ****************Advanced ****************************-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginTop="5dp"
+            android:background="#eee"
+            android:divider="#000"
+            android:orientation="horizontal"
+            android:padding="5dp"
+
+            android:showDividers="beginning">
+
+            <ImageView
+                android:padding="5dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"
+                bind:loadCircleImageUrl="@{Utils.getRandomPicture()}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="#eee"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{name.title}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{name.first}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{name.last}" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
