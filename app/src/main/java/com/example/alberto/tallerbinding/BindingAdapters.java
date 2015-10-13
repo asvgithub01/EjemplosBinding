@@ -82,14 +82,12 @@ public  class BindingAdapters {
 
     @BindingAdapter("bind:commandOnClick")
     public static void setCommandOnclick(View v, final Command command) {
-
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 command.execute(v);
             }
         });
-
     }
 
     @BindingAdapter({"bind:commandOnClick","bind:commandOnClickWithParam"})

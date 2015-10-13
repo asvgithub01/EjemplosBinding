@@ -56,7 +56,6 @@ public class VMRecycler extends BaseObservable {
         return returnData;
     }
 
-
     //region ejemplo1
     public RecyclerView.Adapter getAdapter() {
         return this.mBindRecyclerAdapter;

@@ -24,7 +24,7 @@ import java.util.Random;
  */
 public class Utils {
 
-    //esto es un sacrilegio y el mcontext static aun mas, a falta de viewmodel buenos son static
+    //esto es un sacrilegio y el mcontext static aun mas, habria que trasladarlo al Activity
     public static Command getHelloWorldCommand() {
         return new helloWorldCommand(MainActivity.mContext);
     }

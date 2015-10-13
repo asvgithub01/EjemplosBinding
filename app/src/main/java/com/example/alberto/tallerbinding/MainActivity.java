@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
     TwoWayFunctions func = new TwoWayFunctions();
     OneWayBinding oneway = new OneWayBinding("ONE", "WAY");
     TwoWayBinding twoWayBinding = new TwoWayBinding("twoways");
-    public static Context mContext; //sacrilegio!
+    public static Context mContext; //sacrilegio! es xq se usa a lo gincho en el util.helloCommand()
+    //EJEMPLO PARA CORREGIR ESTO
     //advanced
 
 
