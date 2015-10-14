@@ -1,0 +1,34 @@
+[12:39:44] Jose Benito:  LayoutInflater layoutInflater = LayoutInflater.from(context);
+        View v = layoutInflater.inflate(R.layout.recyclerview_contacts_layout, this, true);-->malaputa!
+        viewDataBinding = DataBindingUtil.inflate(layoutInflater, R.layout.recyclerview_contacts_layout, this, true);
+
+
+
+
+[12:57:27] Jose Benito: Runnable r;
+  static int ini=0;
+    Handler handler = new Handler();
+    @Override
+    public void refreshContactsList(final List<PresentationContact> presentationContacts) {
+
+        r = new Runnable() {
+            @Override
+            public void run() {
+                if(ini<presentationContacts.size()-5) {
+                    contactsRecyclerView.setData(presentationContacts.subList(ini, ini + 5));
+                    ini=ini+5;
+                }else
+                    ini=0;
+                handler.postDelayed(r, 2000);
+            }
+        };
+
+
+        handler.postDelayed(r, 2000);
+
+
+
+    }
+
+docu muy completita
+[17:34:52] Jose Benito: https://realm.io/news/data-binding-android-boyar-mount/
