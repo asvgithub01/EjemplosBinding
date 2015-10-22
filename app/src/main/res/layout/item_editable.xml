@@ -4,7 +4,7 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8800000">
+    android:background="#88000000">
 <LinearLayout
     android:id="@+id/content"
     android:layout_width="match_parent"

@@ -14,6 +14,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.example.alberto.tallerbinding.avanzado.RecyclerView.VMRecycler;
+import com.example.alberto.tallerbinding.commands.Command;
 import com.example.alberto.tallerbinding.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -106,6 +107,8 @@ No funciona, no actualiza el valor
     //region taller editable recycler
 
     
+
+
 
     //endregion
 

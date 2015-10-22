@@ -112,7 +112,7 @@ public  class BindingAdapters {
 
     }
     @BindingAdapter("bind:commandOnCancelItem")
-    public static void setCommandOnSaveItem(View v, final Command command) {
+    public static void setCommandOnCancelItem(View v, final Command command) {
 
     }
     //endregion
