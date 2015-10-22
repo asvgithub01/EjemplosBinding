@@ -2,14 +2,11 @@ package com.example.alberto.tallerbinding.commands;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.Toast;
-
-import java.util.Calendar;
 
 /**
  * Created by Alberto on 22/10/2015.
  */
-public class itemOnClickCommand extends Command {
+public class itemCloseCommand extends Command {
     @Override
     public void execute(View v, Object input) {
 
@@ -17,11 +14,9 @@ public class itemOnClickCommand extends Command {
         //2ºanimacion del template
 
 
-
-
     }
 
-    public itemOnClickCommand(Context context) {
+    public itemCloseCommand(Context context) {
         super(context);
     }
 
@@ -36,4 +31,3 @@ public class itemOnClickCommand extends Command {
         return true;
     }
 }
-

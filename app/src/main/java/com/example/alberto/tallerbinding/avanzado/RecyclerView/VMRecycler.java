@@ -16,6 +16,7 @@ import com.example.alberto.tallerbinding.R;
 import com.example.alberto.tallerbinding.Utils;
 import com.example.alberto.tallerbinding.avanzado.RecyclerView.Model.Name;
 import com.example.alberto.tallerbinding.commands.Command;
+import com.example.alberto.tallerbinding.commands.itemOnClickCommand;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -103,5 +104,8 @@ public class VMRecycler extends BaseObservable {
     }
 
     //endregion
+
+    itemOnClickCommand  onItenClickCommand;
+
 }
 

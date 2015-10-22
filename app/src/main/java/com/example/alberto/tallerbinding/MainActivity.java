@@ -106,7 +106,7 @@ No funciona, no actualiza el valor
 
     //region taller editable recycler
 
-    
+
 
 
 
