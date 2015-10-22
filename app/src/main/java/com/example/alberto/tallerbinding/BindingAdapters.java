@@ -106,4 +106,15 @@ public  class BindingAdapters {
     }
     //endregion
 
+    //region taller editablerecycler
+    @BindingAdapter("bind:commandOnSaveItem")
+    public static void setCommandOnSaveItem(View v, final Command command) {
+
+    }
+    @BindingAdapter("bind:commandOnCancelItem")
+    public static void setCommandOnSaveItem(View v, final Command command) {
+
+    }
+    //endregion
+
 }

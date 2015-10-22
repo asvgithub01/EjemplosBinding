@@ -103,5 +103,12 @@ No funciona, no actualiza el valor
     }
     //endregion
 
+    //region taller editable recycler
+
+    
+
+    //endregion
+
+
 
 }
