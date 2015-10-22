@@ -106,6 +106,10 @@ public class VMRecycler extends BaseObservable {
     //endregion
 
     itemOnClickCommand  onItenClickCommand;
-
+  public itemOnClickCommand  getMyItemOnClickCommand()
+  {
+      onItenClickCommand= new itemOnClickCommand(mContext);
+      return onItenClickCommand;
+  }
 }
 

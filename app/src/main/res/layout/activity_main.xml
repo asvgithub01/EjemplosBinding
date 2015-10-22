@@ -263,6 +263,8 @@
             android:background="#992266"
             bind:setBindingAdapter="@{recyclerVM.getMyAdapter()}"
             bind:setBindingLayoutManager="@{recyclerVM.getMyLayoutManager()}"
+            bind:commandOnItemClick="@{recyclerVM.getMyItemOnClickCommand()}"
+
             />
 </ScrollView>
 

@@ -16,6 +16,7 @@ import com.example.alberto.tallerbinding.commands.helloWorldCommand;
 import com.squareup.okhttp.OkHttpClient;
 
 import java.io.InputStream;
+import java.util.Objects;
 
 /**
  * Created by Alberto on 09/10/2015.
@@ -113,6 +114,11 @@ public  class BindingAdapters {
     }
     @BindingAdapter("bind:commandOnCancelItem")
     public static void setCommandOnCancelItem(View v, final Command command) {
+
+    }
+
+    @BindingAdapter( "bind:addTextWatcher" )
+    public static void setAddTextWatcher(View v, final Command command) {
 
     }
     //endregion
