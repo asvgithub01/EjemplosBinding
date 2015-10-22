@@ -112,11 +112,14 @@ public class Utils {
                 "http://i.gifs.com/1YA.gif",
                 "http://i.gifs.com/1aC.gif",
                 "http://estaticos01.marca.com/imagenes/2015/05/11/futbol/equipos/real_madrid/1431296590_extras_portada_0.jpg",
-                "http://estaticos.marca.com/imagenes/2015/05/11/motor/formula1/gp-espana/1431332444_extras_portada_0.jpg"
+                "http://estaticos.marca.com/imagenes/2015/05/11/motor/formula1/gp-espana/1431332444_extras_portada_0.jpg",
+                "http://31.media.tumblr.com/868ab0943c8e7e8de3af3517d240a5ab/tumblr_nwe379KgsQ1tlb56zo1_400.gif"
 
         };
         return getRandomValueFromArray(pictures);
     }
+
+
 
     public static String getRandomValueFromArray(String[] myRandomArr) {
         int max = myRandomArr.length - 1;
