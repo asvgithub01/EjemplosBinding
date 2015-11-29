@@ -3,6 +3,7 @@ package com.example.alberto.tallerbinding;
 import android.content.Context;
 import android.databinding.BindingAdapter;
 import android.graphics.drawable.Drawable;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
@@ -104,6 +105,9 @@ public  class BindingAdapters {
     @BindingAdapter("bind:commandOnItemClick")
     public static void setCommandOnItemclick(View v, final Command command) {
 
+
+
+
     }
     //endregion
 
@@ -118,7 +122,7 @@ public  class BindingAdapters {
     }
 
     @BindingAdapter( "bind:addTextWatcher" )
-    public static void setAddTextWatcher(View v, final Command command) {
+    public static void setAddTextWatcher(View v, final Object field) {
 
     }
     //endregion

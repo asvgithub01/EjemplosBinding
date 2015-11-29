@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <!--<data>-->
+        <!--<variable-->
+            <!--name="editItem"-->
+            <!--type="com.example.alberto.tallerbinding.avanzado.RecyclerView.Model.Name"/>-->
+    <!--</data>-->
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,9 +22,21 @@
         android:id="@+id/editTitle"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="editItem.title}"
+
 
      />
+    <EditText
+        android:id="@+id/editFirst"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        />
+    <EditText
+        android:id="@+id/editLast"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        />
   <LinearLayout
       android:orientation="horizontal"
       android:layout_gravity="bottom"

@@ -65,7 +65,7 @@ public class RecyclerAdapter<T> extends
         return mData.size();
     }
 
-    public static class RecyclerViewHolder
+    protected static class RecyclerViewHolder
             extends RecyclerView.ViewHolder {
         private ViewDataBinding binding;
 

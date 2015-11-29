@@ -4,7 +4,7 @@
     xmlns:bind="http://schemas.android.com/tools">
     <data>
         <!--Los import son el mismo concepto que de Java, x comodidad y limpieza
-        a la hora de llamar a static, pero necesarios para los @BindingAdapters!-->
+        a la hora de llamar a static, pero necesarios para los @ BindingAdapters!-->
         <import type="com.example.alberto.tallerbinding.commands" />
         <import type="com.example.alberto.tallerbinding.Utils" />
         <import type="com.example.alberto.tallerbinding.BindingAdapters" />
@@ -35,15 +35,16 @@
             name="twoway"
             type="com.example.alberto.tallerbinding.TwoWayBinding" />
     </data>
-
+<RelativeLayout  android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:visibility="gone">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" android:visibility="gone">
+        android:orientation="vertical" >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -250,22 +251,17 @@
             android:layout_width="match_parent"
             android:layout_height="600dp"
             android:background="#992266"
-            bind:setBindingAdapter="@{recyclerVM.getMyAdapter()}"
-            bind:setBindingLayoutManager="@{recyclerVM.getMyLayoutManager()}"
-            />
+            bind:data="@{recyclerVM.getMyAdapter()}"
+            bind:onLoad="@{recyclerVM.getMyLayoutManager()}"
+            bind:commandOnItemClick="@{recyclerVM.getMyItemOnClickCommand()}" />
 
 
     </LinearLayout>
 
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="600dp"
-            android:background="#992266"
-            bind:setBindingAdapter="@{recyclerVM.getMyAdapter()}"
-            bind:setBindingLayoutManager="@{recyclerVM.getMyLayoutManager()}"
-            bind:commandOnItemClick="@{recyclerVM.getMyItemOnClickCommand()}"
 
-            />
 </ScrollView>
 
+
+
+</RelativeLayout>
 </layout>
