@@ -1,6 +1,6 @@
 package com.example.alberto.tallerbinding.avanzado.RecyclerView.Model;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
+
 
 /**
  * Created by Alberto on 09/10/2015.
@@ -53,9 +53,6 @@ public class Name {
             this.last = last;
         }
 
-        @Override
-        public String toString() {
-            return ToStringBuilder.reflectionToString(this);
-        }
+
 
     }

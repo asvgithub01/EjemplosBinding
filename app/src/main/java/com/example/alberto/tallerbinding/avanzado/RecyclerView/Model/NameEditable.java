@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 
 import com.example.alberto.tallerbinding.SimpleTextWatcher;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
+
 
 /**
  * Created by Alberto on 09/10/2015.
@@ -39,9 +39,5 @@ public class NameEditable extends BaseObservable {
         this.last = last;
     }
 
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this);
-    }
 
 }

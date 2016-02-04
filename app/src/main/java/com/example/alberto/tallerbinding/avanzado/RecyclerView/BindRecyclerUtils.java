@@ -11,7 +11,7 @@ import android.view.View;
 import com.example.alberto.tallerbinding.avanzado.RecyclerView.Model.Name;
 import com.example.alberto.tallerbinding.commands.Command;
 
-import org.antlr.v4.runtime.misc.NotNull;
+
 
 /**
  * Created by Alberto on 11/10/2015.
@@ -70,13 +70,13 @@ public class BindRecyclerUtils {
     }
 
 
-    @BindingAdapter({"bind:LayoutManager4StaticRecy","bind:mdata","bind:NmaevaRIABLEbINGIN","bind:itemtemplate"})
-    public static void setBindingLayoutManager(RecyclerView recyclerView,RecyclerView.LayoutManager layoutManager,List<T> mdata,) {
+  //  @BindingAdapter({"bind:LayoutManager4StaticRecy","bind:mdata","bind:NmaevaRIABLEbINGIN","bind:itemtemplate"})
+  //  public static void setBindingLayoutManager(RecyclerView recyclerView,RecyclerView.LayoutManager layoutManager,List<T> mdata,) {
 
         //RecyclerAdapter<Name> recyclerAdapter = new RecyclerAdapter<Name>();
 
       //  recyclerView.setLayoutManager(layoutManager);
-    }
+    //}
 
 
 

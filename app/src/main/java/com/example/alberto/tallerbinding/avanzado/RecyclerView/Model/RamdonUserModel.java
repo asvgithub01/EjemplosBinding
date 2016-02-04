@@ -1,9 +1,5 @@
 package com.example.alberto.tallerbinding.avanzado.RecyclerView.Model;
 
-
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,9 +69,5 @@ public class RamdonUserModel {
         this.version = version;
     }
 
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this);
-    }
 
 }

@@ -4,15 +4,15 @@
     xmlns:bind="http://schemas.android.com/tools">
     <data>
         <!--Los import son el mismo concepto que de Java, x comodidad y limpieza
-        a la hora de llamar a static, pero necesarios para los @ BindingAdapters!-->
-        <import type="com.example.alberto.tallerbinding.commands" />
+        a la hora de llamar a static, pero necesarios para los @ BindingAdapters!
+        <import type="com.example.alberto.tallerbinding.commands" />-->
         <import type="com.example.alberto.tallerbinding.Utils" />
         <import type="com.example.alberto.tallerbinding.BindingAdapters" />
         <import type="android.view.View" />
         <!--esto se utiliza al establecer el View.Gone y tal-->
 
-        <!--Advanced-->
-       <import type="com.example.alberto.tallerbinding.avanzado.RecyclerView"/>
+        <!--Advanced
+       <import type="com.example.alberto.tallerbinding.avanzado.RecyclerView"/>-->
         <import type="com.example.alberto.tallerbinding.avanzado.BindingAdaptersAdvanced" /><!--Imagenircular-->
         <import type="com.example.alberto.tallerbinding.avanzado.RecyclerView.BindRecyclerUtils" /><!--RecyclerAdapter-->
         <!--Esta variable sólo determina el TIPO de class que vamos a bindear.
@@ -40,7 +40,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone">
+        android:visibility="visible">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -246,14 +246,14 @@
             />
         <!--*************RECYCLER por binding adapter/linear/itemR.Layout, nombre de lo datos, siempre deberia ser unobjeto llamado itemData***************-->
      <!--En un solo @BindingAdapter   RecyclerAdapter<T> extends-->
-        <!--*************RECYCLER por binding adapter/linear***************-->
+        <!--*************RECYCLER por binding adapter/linear***************
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="600dp"
             android:background="#992266"
             bind:data="@{recyclerVM.getMyAdapter()}"
             bind:onLoad="@{recyclerVM.getMyLayoutManager()}"
-            bind:commandOnItemClick="@{recyclerVM.getMyItemOnClickCommand()}" />
+            bind:commandOnItemClick="@{recyclerVM.getMyItemOnClickCommand()}" />-->
 
 
     </LinearLayout>

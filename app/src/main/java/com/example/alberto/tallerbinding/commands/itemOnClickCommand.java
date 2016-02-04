@@ -38,7 +38,7 @@ public class itemOnClickCommand  extends Command {
 
     ItemEditableBinding binding;
     private View inflateEditItem(Name name) {
-          binding = DataBindingUtil.setContentView((Activity) mContext, R.layout.item_editable);
+          binding = (ItemEditableBinding)DataBindingUtil.setContentView((Activity) mContext, R.layout.item_editable);
         binding.editTitle.setHint(name.getTitle());
         return binding.content;
     }
